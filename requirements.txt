@@ -1,5 +1,4 @@
 pandas
-json
 urllib.request
 functools
 plotly.graph_objects
