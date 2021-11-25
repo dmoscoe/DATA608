@@ -5,8 +5,6 @@ Created on Sun Nov 21 12:08:23 2021
 @author: dmosc
 """
 
-#Is there a problem with the net gen graphs? The 'Other' category always seems too large.
-
 import pandas as pd
 import json
 import urllib.request
