@@ -5,6 +5,7 @@ dash-core-components
 dash-html-components
 dash-renderer
 dash-table
+gunicorn==20.0.4
 json5
 jsonschema
 pandas
