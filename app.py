@@ -256,7 +256,7 @@ app.layout = dbc.Tabs([
             html.I('How has a state\'s electricity generation portfolio changed over time?'),
             html.Ul('Select Iowa (IA) for the period 2015-2021, and select Coal, Natural Gas, Wind, and Nuclear from the fuels dropdown. Notice that Iowa shut down its sole nuclear plant in September 2020. A growing share of electricity generation in Iowa has been due to wind, although when demand is highest during the summer months, some share of production transfers from wind to coal.'),
             html.I('What fuel sources are most sensitive to changes in consumption?'),
-            html.Ul('Select New York (NY) for the period 2008-2012, and select Coal, Natural Gas, Nuclear, and Conventional Hydroelectric from the checklist. Notice that during periods of high consumption, natural gas produces a greater share of electricity in New York, and nuclear a smaller share.'),
+            html.Ul('Select New York (NY) for the period 2008-2012, and select Coal, Natural Gas, Nuclear, and Conventional Hydroelectric from the dropdown menu. Notice that during periods of high consumption, natural gas produces a greater share of electricity in New York, and nuclear a smaller share.'),
         ]),
     ], style = {'padding': 50}, label = 'Con/Prod'),
     dbc.Tab([
