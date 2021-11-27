@@ -318,7 +318,7 @@ app.layout = dbc.Tabs([
             ('This site was created by '),
             html.A("Daniel Moscoe", href = 'https://linkedin.com/in/dmoscoe',),
             (' as a final project for the course in Knowledge and Visual Analytics at the CUNY '),
-            html.A('School of Professional Studies', href = 'https://sps.cuny.edu/academics/graduate/master-science-data-science-ms'),
+            html.A('School of Professional Studies', href = 'http://catalog.sps.cuny.edu/preview_program.php?catoid=2&poid=607'),
             ('. Data is pulled from the API at the '),
             html.A('U.S. Energy Information Administration', href = 'https://www.eia.gov/opendata'),
             ('. Visualizations combine information on the following datasets:'),
