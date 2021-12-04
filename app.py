@@ -330,6 +330,10 @@ app.layout = dbc.Tabs([
             html.Li(html.A('Total Energy Consumption', href = 'https://www.eia.gov/opendata/qb.php?category=40236')),
             html.P(),
             ('Transforming the electricity generation and distribution systems are some of the most improtant steps toward mitigating climate change in the United States and enabling continued economic growth. Both these goals require not only improvements in efficiency in generation, storage, and transmission, but also a dramatic shift in the fuels used to generate electricity. The visualizations on this site provide a glimpse into the recent history of electricity consumption and production in the United States, as well as how electricity consumption patterns vary with economic conditions across states.'),
+            html.P(),
+            ('View the '),
+            html.A("repo", href = 'https://github.com/dmoscoe/DATA608',),
+            ('for this site.'),
         ]),
     ], style = {'padding': 50}, label = "About"),
 ]) #dbc.Tabs
