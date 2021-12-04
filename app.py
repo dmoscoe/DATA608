@@ -333,7 +333,7 @@ app.layout = dbc.Tabs([
             html.P(),
             ('View the '),
             html.A("repo", href = 'https://github.com/dmoscoe/DATA608',),
-            ('for this site.'),
+            (' for this site.'),
         ]),
     ], style = {'padding': 50}, label = "About"),
 ]) #dbc.Tabs
