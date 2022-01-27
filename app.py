@@ -112,7 +112,13 @@ def get_net_gen(state, fuel):
 
 def get_net_gens(state, fuels, start, end):
     df_list = []
+###
+    if 'select_all' in fuels:
+        fuels = list(fuel_types)
+###
+
     fuels.append("ALL")
+
     
     for fuel in fuels:
         tmp = get_net_gen(state, fuel)
@@ -200,9 +206,14 @@ app.layout = dbc.Tabs([
                     value = 'NY',),
                 ])),
                 dbc.Col(html.Div([
+                    
                     html.B('Select fuels.'),
                     dcc.Dropdown(id = 'fuels',
-                        options = [{'label':"Coal", 'value':"COW"},
+                        options = [
+###                            
+                            {'label':"(Select all)", 'value':'select_all'},
+###                            
+                            {'label':"Coal", 'value':"COW"},
                             {'label':"Petroleum liquids",'value':"PEL"},
                             {'label':"Petroleum coke",'value':"PC"},
                             {'label':"Natural gas",'value':"NG"},
@@ -219,7 +230,7 @@ app.layout = dbc.Tabs([
                             {'label':"Hydro-electric pumped storage",'value':"HPS"},
                             {'label':"All solar",'value':"TSN"},
                             {'label':"Small-scale solar photovoltaic",'value':"DPV"}],
-                        value = ['NG', 'NUC'], 
+                        value = ['COW', 'NUC'], 
                         multi = True),
                     html.P(),
                 ])),
