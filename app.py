@@ -57,7 +57,7 @@ def get_retail_sales(state):
     if "retail_sales" in pulled_data[state].keys():
         return pulled_data[state]["retail_sales"]
     else:            
-        api_call = "http://api.eia.gov/series/?api_key=c0b197bcf4610007c7e977fccc486830&series_id=ELEC.SALES." + state + "-ALL.M"
+        api_call = "https://api.eia.gov/series/?api_key=c0b197bcf4610007c7e977fccc486830&series_id=ELEC.SALES." + state + "-ALL.M"
         with urllib.request.urlopen(api_call) as url:
             data = json.loads(url.read().decode())
         
@@ -88,7 +88,7 @@ def get_net_gen(state, fuel):
         return pulled_data[state][fuel]
     else:
         try:
-            api_call = "http://api.eia.gov/series/?api_key=c0b197bcf4610007c7e977fccc486830&series_id=ELEC.GEN." + fuel + "-" + state + "-99.M"
+            api_call = "https://api.eia.gov/series/?api_key=c0b197bcf4610007c7e977fccc486830&series_id=ELEC.GEN." + fuel + "-" + state + "-99.M"
             with urllib.request.urlopen(api_call) as url:
                 data = json.loads(url.read().decode())
             df = pd.DataFrame(
@@ -96,7 +96,7 @@ def get_net_gen(state, fuel):
                 columns = ['Date', fuel])
         
         except KeyError:
-            api_call = "http://api.eia.gov/series/?api_key=c0b197bcf4610007c7e977fccc486830&series_id=ELEC.GEN.ALL-" + state + "-99.M"
+            api_call = "https://api.eia.gov/series/?api_key=c0b197bcf4610007c7e977fccc486830&series_id=ELEC.GEN.ALL-" + state + "-99.M"
             with urllib.request.urlopen(api_call) as url:
                 data = json.loads(url.read().decode())
             df = pd.DataFrame(
@@ -145,9 +145,9 @@ def get_intensity(state):
     if 'intensity' in pulled_data[state].keys():
         return pulled_data[state]['intensity']
     else:
-        api_call_population = "http://api.eia.gov/series/?api_key=c0b197bcf4610007c7e977fccc486830&series_id=SEDS.TPOPP." + state + ".A"
-        api_call_real_gdp = "http://api.eia.gov/series/?api_key=c0b197bcf4610007c7e977fccc486830&series_id=SEDS.GDPRX." + state + ".A"
-        api_call_total_consumption = "http://api.eia.gov/series/?api_key=c0b197bcf4610007c7e977fccc486830&series_id=SEDS.TETCB." + state + ".A"
+        api_call_population = "https://api.eia.gov/series/?api_key=c0b197bcf4610007c7e977fccc486830&series_id=SEDS.TPOPP." + state + ".A"
+        api_call_real_gdp = "https://api.eia.gov/series/?api_key=c0b197bcf4610007c7e977fccc486830&series_id=SEDS.GDPRX." + state + ".A"
+        api_call_total_consumption = "https://api.eia.gov/series/?api_key=c0b197bcf4610007c7e977fccc486830&series_id=SEDS.TETCB." + state + ".A"
     
         with urllib.request.urlopen(api_call_population) as url:
             data = json.loads(url.read().decode())
